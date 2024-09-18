@@ -6,6 +6,7 @@
 body {
     background-color: #FCE7E7;
     overflow-x: hidden;
+    color: black;
 }
 
 /* @keyframes nav-slide {

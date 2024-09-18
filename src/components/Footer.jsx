@@ -26,7 +26,7 @@ const Footer = () => {
                     <Link to='/about'><li className='flex gap-2 items-center'><MdOutlineKeyboardArrowRight /> About Us</li></Link>
                     <Link to='/program'><li className='flex gap-2 items-center'><MdOutlineKeyboardArrowRight /> Programs</li></Link>
                     <Link to='/contact'><li className='flex gap-2 items-center'><MdOutlineKeyboardArrowRight /> Contact Us</li></Link>
-                    <Link to='/'><li className='flex gap-2 items-center'><MdOutlineKeyboardArrowRight /> Donate</li></Link>
+                    <Link to='/donate'><li className='flex gap-2 items-center'><MdOutlineKeyboardArrowRight /> Donate</li></Link>
                     
                 </ul>
             </div>

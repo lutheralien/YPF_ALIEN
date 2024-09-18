@@ -107,8 +107,10 @@ const Home = () => {
             <div className='absolute z-10 lg:w-[45vw] md:w-[60vw] text-center text-white flex gap-3 flex-col md:mx-6 lg:mx-16'>
                 <h1 className='text-4xl md:text-5xl lg:text-6xl font-semibold leading-[1.2]'>Empowering <span className='text-orange'>Youth</span> to Help the <span className='text-orange'>Needy</span></h1>
                 <p className='md:text-2xl text-xl px-10'>Join us in making a great difference in our society today</p>
-                <div className='flex items-center gap-12 justify-center py-3'>
-                    <button className='hover:bg-white border-2 hover:border-orange hover:text-orange duration-300 hover:scale-105 ease-linear border-orange bg-orange text-white rounded-3xl py-1 px-5 md:py-2 md:px-10 md:text-2xl font-normal'>Donate Now</button>
+                <div className='flex items-center gap-4 md:gap-12 justify-center py-3'>
+                    <Link to='/donate'>
+                        <button className='hover:bg-white border-2 hover:border-orange hover:text-orange duration-300 hover:scale-105 ease-linear border-orange bg-orange text-white rounded-3xl py-1 px-5 md:py-2 md:px-10 md:text-2xl font-normal'>Donate Now</button>
+                    </Link>
                     <Link to='/about'>
                         <button className='bg-white border-2 border-orange text-orange rounded-3xl py-1 px-5 md:py-2 md:px-10 md:text-2xl font-normal hover:bg-orange hover:text-white hover:scale-105 duration-300 ease-linear'>Read More</button>
                     </Link>
@@ -116,7 +118,7 @@ const Home = () => {
             </div>
             <img src={Hero} alt="" className='filter grayscale h-full w-full bg-cover'/>
         </div>
-        <div className='flex flex-col mx-8 my-5 gap-4 md:mx-4 md:flex-row md:gap-5 lg:mx-20 lg:gap-10 md:-mt-16 z-100 relative mb-12'>
+        <div className='flex flex-col mx-8 my-5 gap-4 md:mx-4 md:flex-row md:gap-5 lg:mx-20 lg:gap-10 md:-mt-16 z-100 relative mb-12 max-m:h-72'>
             {notes.map((item, id) => {
                 return(
                     <div key={item.id}>
@@ -132,17 +134,17 @@ const Home = () => {
             })}
         </div>
         <div className='w-full bg-white flex flex-col-reverse md:items-center lg:flex-row lg:gap-10 px-8 lg:px-20'>
-            <img src={About} alt="" className='w-[500px] flex '/>
+            <img src={About} alt="" className='w-[500px]'/>
             <div className='py-16'>
-                <p className='text-3xl text-center text-orange'>About YPF</p>
-                <h1 className='text-4xl text-center font-semibold py-6'>Get to know Us More</h1>
+                <p className='text-2xl md:text-3xl text-center text-orange'>About YPF</p>
+                <h1 className='text-3xl md:text-4xl text-center font-semibold pt-2 pb-3 md:py-6'>Get To Know Us More</h1>
                 <div className='md:text-xl flex flex-col gap-4 pt-2'>
                     <p>It’s a philantropy foundation that seeks to help the needy and the less privileged in the society.</p>
                     <p>It’s filled with vibrant young people who share good hearts for everyone being a needy within their capacity.</p> 
                     <p>We donate within our range as volunteers and not so huge out of our stipends. YPF today is growing wide and interactive.</p>
                 </div>
                 <p className='my-6 text-orange italic'>Let’s create smiles with a coin...</p>
-                <div className='flex items-center gap-12'>
+                <div className='flex items-center gap-6 md:gap-12'>
                     <Link to='/about'>
                         <button className='md:py-3 md:px-16 py-2 px-2 bg-orange text-white text-xl flex gap-3 items-center hover:scale-75 duration-300 ease-linear'>
                             <FaArrowLeftLong /> 
@@ -193,7 +195,7 @@ const Home = () => {
                 modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
                 spaceBetween={30}
                 slidesPerView={3}
-                autoplay={{ delay: 900, disableOnInteraction: false }}
+                autoplay={{ delay: 2000, disableOnInteraction: false }}
                 loop={true}
                 onSwiper={(swiper) => console.log(swiper)}
                 onSlideChange={() => console.log('slide change')}
@@ -216,7 +218,7 @@ const Home = () => {
                 {
                     TestimonialData.map((item, id) => {
                     return (
-                        <SwiperSlide key={id} className='bg-white h-52 p-2 rounded-md'>
+                        <SwiperSlide key={id} className='bg-white h-56 p-2 rounded-md'>
                         <div className='flex flex-col gap-3'>
                             <div className='flex items-center'>
                                 <img src="" alt="" />

@@ -39,7 +39,9 @@ const Navbar = () => {
                   <Link to='/contact'>
                     <li onClick={() => handleLinkClick('Services')} className="">Contact</li>
                   </Link>
-                  <button className='bg-white border-2 border-orange text-orange rounded-3xl py-2 px-4'>Donate Now</button>
+                  <Link to='/donate'>
+                    <button className='bg-white border-2 border-orange text-orange rounded-3xl py-2 px-4 hover:bg-orange hover:text-white duration-300 ease-linear hover:scale-90'>Donate Now</button>
+                  </Link>
                 </ul>
                 <div className="lg:hidden md:flex md:flex-col justify-end">
                     <button onClick={toggleNavbar}>
@@ -55,7 +57,7 @@ const Navbar = () => {
                         <li className='' onClick={toggleNavbar}><Link to="/about">About Us</Link></li>
                         <li className='' onClick={toggleNavbar}><Link to="/program">Programs</Link></li>
                         <li className='' onClick={toggleNavbar}><Link to="/contact">Contact Us</Link></li>
-                        <button className='bg-white border-2 border-orange text-orange rounded-3xl py-1 px-3'>Donate Now</button>
+                        <button className='bg-white border-2 border-orange text-orange rounded-3xl py-1 px-3'><Link to='/donate'>Donate Now</Link></button>
                     </ul>
                 </div>
             )}
