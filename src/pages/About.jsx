@@ -129,7 +129,6 @@ const About = () => {
                 spaceBetween={30}
                 slidesPerView={3}
                 navigation={true}
-                pagination={{ clickable: true }} // Optional if you want pagination
                 onSwiper={(swiper) => console.log(swiper)}
                 onSlideChange={() => console.log('slide change')}
                 className='md:mx-10 mx-5'
@@ -158,7 +157,7 @@ const About = () => {
                                 alt="Executives" className='rounded-t-xl'/>
                             </figure>
                             <div className="py-2 px-4 flex flex-col gap-1">
-                                <h2 className="card-title">{item.name}</h2>
+                                <h2 className="card-title text-purple">{item.name}</h2>
                                 <p>{item.position}</p>
                                 <p>{item.school}</p>
                             </div>
