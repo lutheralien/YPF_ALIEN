@@ -3,6 +3,11 @@ import Navbar from '../components/Navbar'
 import Hero from '../assets/contact-hero.png'
 import Banner from '../components/Banner'
 import Footer from '../components/Footer'
+import { MdOutlineEmail } from "react-icons/md";
+import { MdCall } from "react-icons/md";
+import { IoLocation } from "react-icons/io5";
+
+
 
 const Contact = () => {
   return (
@@ -19,25 +24,26 @@ const Contact = () => {
                 <h1 className='text-3xl font-semibold text-center text-purple'>Get In Touch With Us</h1>
                 <p className='text-lg text-gray-600 text-center'>Communicate with us anytime, anyday</p>
                 <div className='flex flex-col gap-6 pt-8'>
-                    <div>
-                        <img src="" alt="" />
+                    <div className='flex items-center gap-3'>
+                        <MdOutlineEmail className='text-4xl text-purple'/>
                         <div>
                             <p className='text-purple text-xl'>Email Us</p>
-                            <p>test@gmail.com</p>
+                            <p>ypf.help@gmail.com</p>
                         </div>
                     </div>
-                    <div>
-                        <img src="" alt="" />
+                    <div className='flex items-center gap-3'>
+                        <MdCall className='text-4xl text-purple'/>
                         <div>
                             <p className='text-purple text-xl'>Call Us</p>
-                            <p>+233 686686649</p>
+                            <p>+233 59760 8013</p>
+                            <p>+233 20310 0416</p>
                         </div>
                     </div>
-                    <div>
-                        <img src="" alt="" />
+                    <div className='flex items-center gap-3'>
+                        <IoLocation className='text-4xl text-purple'/>
                         <div>
                             <p className='text-purple text-xl'>Address</p>
-                            <p>Kasoa Ofaakor</p>
+                            <p>Winneba, Central Region</p>
                         </div>
                     </div>
                 </div>

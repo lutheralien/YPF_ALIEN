@@ -7,6 +7,8 @@ import Img3 from '../assets/program-img3.png'
 import Img4 from '../assets/program-img4.png'
 import Img5 from '../assets/program-img5.png'
 import Img6 from '../assets/program-img6.png'
+import Hot from '../assets/hot.jpg'
+import Donate from '../assets/donation.jpg'
 import Footer from '../components/Footer'
 
 
@@ -54,6 +56,10 @@ const Program = () => {
           <div className='flex flex-col items-center text-3xl md:text-4xl font-semibold'>
             <h1 className='text-purple'>Join Our Upcoming</h1>
             <h1 className='text-orange'>Events</h1>
+          </div>
+          <div className='grid grid-cols-1 md:grid-cols-2 gap-5 py-10 mx-8 md:mx-16 lg:mx-44 place-items-center'>
+            <img src={Donate} alt="" className='w-[400px] border-2 border-orange rounded-lg'/>
+            <img src={Hot} alt="" className='w-[400px] border-2 border-orange rounded-lg'/>
           </div>
         </div>
       </div>
