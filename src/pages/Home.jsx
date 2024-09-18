@@ -173,7 +173,9 @@ const Home = () => {
                                 <h2 className="card-title">{item.title}</h2>
                                 <p>{item.description}</p>
                                 <div className="">
-                                    <button className="bg-purple text-orange text-lg py-2 px-4 rounded-xl">Join Community</button>
+                                    <a href="https://forms.gle/yXgvukFraDap91YUA" target="_blank" rel="noopener noreferrer">
+                                        <button className="bg-purple text-orange text-lg py-2 px-4 rounded-xl">Join Community</button>
+                                    </a>
                                 </div>
                             </div>
                         </div>
