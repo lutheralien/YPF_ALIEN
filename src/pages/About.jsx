@@ -1,17 +1,26 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
 import Hero from '../assets/about-hero.png'
-import Intro from '../assets/intro.png'
+import Intro from '../assets/video.mp4'
 import We from '../assets/we.png'
 import PKay from '../assets/pk.png'
 import Rahina from '../assets/rahina.png'
 import Gad from '../assets/gad.png'
 import Inspire from '../assets/inspire.png'
 import Footer from '../components/Footer'
+import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from 'swiper/modules'
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
 
 const executives = [
     {image: PKay, name: "Justice Paa Kwesi Abban Junior", position: "President, YPF", school: "University of Education, Winneba"},
     {image: Rahina, name: "Rahina Korkor Mensah", position: "Vice President, YPF", school: "University of Ghana, Legon"},
+    {image: Gad, name: "Gad Odoi Alert", position: "Graphic Designer", school: "University of Mines and Technology, Tarkwa"},
+    {image: Gad, name: "Gad Odoi Alert", position: "Graphic Designer", school: "University of Mines and Technology, Tarkwa"},
+    {image: Gad, name: "Gad Odoi Alert", position: "Graphic Designer", school: "University of Mines and Technology, Tarkwa"},
     {image: Gad, name: "Gad Odoi Alert", position: "Graphic Designer", school: "University of Mines and Technology, Tarkwa"},
 ]
 const About = () => {
@@ -32,7 +41,11 @@ const About = () => {
                     <h3 className='text-3xl md:text-4xl text-orange'>Introduction</h3>
                     <p className='text-lg md:text-xl leading-[1.2]'>The foundation was established on October 23, 2023, by a group of friends who shared the idea of helping the needy. Justice Paa Kwesi Abban Junior, the CEO, is recognized as the lead founder. The initial members joined through engagement and interactions on social media and through friends. YPF believes that true success comes from giving back to society, regardless of age or recognition, and aims to create smiles with even the smallest contributions.</p>
                 </div>
-                <img src={Intro} alt="" className='lg:w-[45vw]'/>
+                {/* <video src={Intro} loop={true} /> */}
+                <video loop autoPlay muted className='lg:w-[45vw]'>
+                    <source src={Intro} type="video/mp4" />
+                    Your browser does not support the video tag.
+                </video>
             </div>
             <div className='flex flex-col-reverse lg:flex-row items-center gap-4 mx-4 md:mx-10 mt-10'>
                 <img src={We} alt="" className='lg:w-[45vw]'/>
@@ -110,10 +123,35 @@ const About = () => {
         </div>
         <div className='bg-white py-10 my-4'>
             <h1 className='text-3xl md:text-4xl text-center font-semibold text-purple '>Meet Our Team Executives</h1>
-            <div className='grid grid-cols-3 gap-8 mx-12 lg:mx-20 pt-8'>
-                {executives.map((item, id) => {
-                    return(
-                        <div className="bg-base-100 shadow-xl border-2 border-orange rounded-2xl" key={id}>
+            <div className='my-4 py-4 md:px-4'>
+            <Swiper
+                modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
+                spaceBetween={30}
+                slidesPerView={3}
+                navigation={true}
+                pagination={{ clickable: true }} // Optional if you want pagination
+                onSwiper={(swiper) => console.log(swiper)}
+                onSlideChange={() => console.log('slide change')}
+                className='md:mx-10 mx-5'
+                breakpoints={{
+                    320: {
+                    slidesPerView: 1,
+                    spaceBetween: 15,
+                    },
+                    640: {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                    },
+                    1024: {
+                    slidesPerView: 3,
+                    spaceBetween: 30,
+                    },
+                }}
+                >
+                {
+                    executives.map((item, id) => {
+                    return (
+                        <SwiperSlide className="bg-base-100 shadow-xl border-2 border-orange rounded-2xl" key={id}>
                             <figure>
                                 <img
                                 src={item.image}
@@ -124,10 +162,12 @@ const About = () => {
                                 <p>{item.position}</p>
                                 <p>{item.school}</p>
                             </div>
-                        </div>
+                        </SwiperSlide>
                     )
-                })}
-            </div>
+                    })
+                }
+                </Swiper>
+                </div>
         </div>
         <img src={Inspire} alt="" className='mb-6'/>
         <Footer />

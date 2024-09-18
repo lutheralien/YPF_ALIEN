@@ -11,6 +11,47 @@ import Img2 from '../assets/home-img2.png'
 import Img3 from '../assets/home-img3.png'
 import Banner from '../components/Banner'
 import Footer from '../components/Footer'
+import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from 'swiper/modules'
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
+import { Link } from 'react-router-dom'
+
+
+const TestimonialData = [
+  {
+    text: "I was struggling to feed my family after losing my job, but YPF's food drive gave us a second chance. Thank you for caring!",
+    name: "Joseph Broni",
+    position: "Beneficiary"
+  },
+  {
+    text: "Joining YPF has been an incredible experience. Seeing the impact we make in our community is truly fulfilling",
+    name: "Abigail A.", 
+    position: "Volunteer"
+  },
+  {
+    text: "YPF's passion and dedication inspire me to be a better person. I'm proud to be part of this team!",
+    name: "M. Nyarkoh",
+    position: "Volunteer"
+  },
+  {
+    text: "The Young Philanthropists Foundation has been a game-changer in my life. Their support helped me access education and healthcare when I thought all hope was lost",
+    name: "Rachel D.",
+    position: "Beneficiary"
+  },
+  {
+    text: "YPF is more than just a foundation – it's a movement of young people driven by compassion and empathy.",
+    name: "Paa Kwesi, President",
+    position: "Founder"
+  },
+  {
+    text: "YPF is more than just a foundation – it's a movement of young people driven by compassion and empathy.I was hesitant to try online health coaching but Blugle's platform is so convenient and use friendly.",
+    name: "Gabby, YPF Software Developer",
+    position: "Member"
+  }
+] 
 
 
 const notes = [
@@ -67,8 +108,10 @@ const Home = () => {
                 <h1 className='text-4xl md:text-5xl lg:text-6xl font-semibold leading-[1.2]'>Empowering <span className='text-orange'>Youth</span> to Help the <span className='text-orange'>Needy</span></h1>
                 <p className='md:text-2xl text-xl px-10'>Join us in making a great difference in our society today</p>
                 <div className='flex items-center gap-12 justify-center py-3'>
-                    <button className='bg-orange text-white rounded-3xl py-1 px-5 md:py-2 md:px-10 md:text-2xl font-normal'>Donate Now</button>
-                    <button className='bg-white border-2 border-orange text-orange rounded-3xl py-1 px-5 md:py-2 md:px-10 md:text-2xl font-normal'>Read More</button>
+                    <button className='hover:bg-white border-2 hover:border-orange hover:text-orange duration-300 hover:scale-105 ease-linear border-orange bg-orange text-white rounded-3xl py-1 px-5 md:py-2 md:px-10 md:text-2xl font-normal'>Donate Now</button>
+                    <Link to='/about'>
+                        <button className='bg-white border-2 border-orange text-orange rounded-3xl py-1 px-5 md:py-2 md:px-10 md:text-2xl font-normal hover:bg-orange hover:text-white hover:scale-105 duration-300 ease-linear'>Read More</button>
+                    </Link>
                 </div>
             </div>
             <img src={Hero} alt="" className='filter grayscale h-full w-full bg-cover'/>
@@ -100,14 +143,18 @@ const Home = () => {
                 </div>
                 <p className='my-6 text-orange italic'>Let’s create smiles with a coin...</p>
                 <div className='flex items-center gap-12'>
-                    <button className='md:py-3 md:px-16 py-2 px-2 bg-orange text-white text-xl flex gap-3 items-center'>
-                        <FaArrowLeftLong /> 
-                        <p>Our Mission</p>
-                    </button>
-                    <button className='md:py-3 md:px-16 py-2 px-2 bg-purple text-white text-xl flex gap-3 items-center'>
-                        <FaArrowLeftLong /> 
-                        <p>Our Vision</p>
-                    </button>
+                    <Link to='/about'>
+                        <button className='md:py-3 md:px-16 py-2 px-2 bg-orange text-white text-xl flex gap-3 items-center hover:scale-75 duration-300 ease-linear'>
+                            <FaArrowLeftLong /> 
+                            <p>Our Mission</p>
+                        </button>
+                    </Link>
+                    <Link to='/about'>
+                        <button className='md:py-3 md:px-16 py-2 px-2 bg-purple text-white text-xl flex gap-3 items-center hover:scale-75 duration-300 ease-linear'>
+                            <FaArrowLeftLong /> 
+                            <p>Our Vision</p>
+                        </button>
+                    </Link>
                 </div>
             </div>
         </div>
@@ -137,13 +184,57 @@ const Home = () => {
         <div className=''>
             <Banner />
         </div>
-        <div className='bg-white py-12'>
+        <div className='bg-[#F0F0F0] py-12'>
             <h1 className='text-center text-2xl m:text-4xl font-semibold text-purple'>What They Say About Us</h1>
-            <div>
-
+        <div className='my-4 py-4 md:px-4'>
+            <Swiper
+                modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
+                spaceBetween={30}
+                slidesPerView={3}
+                autoplay={{ delay: 900, disableOnInteraction: false }}
+                loop={true}
+                onSwiper={(swiper) => console.log(swiper)}
+                onSlideChange={() => console.log('slide change')}
+                className='md:mx-10 mx-5'
+                breakpoints={{
+                    320: {
+                    slidesPerView: 1,
+                    spaceBetween: 15,
+                    },
+                    640: {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                    },
+                    1024: {
+                    slidesPerView: 3,
+                    spaceBetween: 30,
+                    },
+                }}
+                >
+                {
+                    TestimonialData.map((item, id) => {
+                    return (
+                        <SwiperSlide key={id} className='bg-white h-52 p-2 rounded-md'>
+                        <div className='flex flex-col gap-3'>
+                            <div className='flex items-center'>
+                                <img src="" alt="" />
+                                <div className='flex flex-col'>
+                                    <p className='text-red-400 font-semibold'>{item.name}</p>
+                                    <p className='text-gray-400 text-sm'>{item.position}</p>
+                                    <p>⭐⭐⭐⭐⭐</p>
+                                </div>
+                            </div>
+                            <div>
+                                <p>{item.text}</p>
+                            </div>
+                        </div>
+                        </SwiperSlide>
+                    )
+                    })
+                }
+                </Swiper>
+                </div>
             </div>
-        </div>
-        
         <Footer />
     </div>
   )

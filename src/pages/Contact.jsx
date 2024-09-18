@@ -48,21 +48,21 @@ const Contact = () => {
                     <div className='flex flex-col md:flex-row md:items-center md:gap-10 w-full'>
                         <div>
                             <label htmlFor="">Full Name</label><br />
-                            <input type="text" className='bg-[#EAEDF0] mt-2 md:w-[250px] rounded-lg py-2 px-2 w-full'/>
+                            <input type="text" required className='bg-[#EAEDF0] mt-2 md:w-[250px] rounded-lg py-2 px-2 w-full'/>
                         </div>
                         <div>
                             <label htmlFor="">Phone</label><br />
-                            <input type="tel" className='bg-[#EAEDF0] mt-2 md:w-[250px] rounded-lg py-2 px-2 w-full'/>
+                            <input type="tel" required className='bg-[#EAEDF0] mt-2 md:w-[250px] rounded-lg py-2 px-2 w-full'/>
                         </div>
                     </div>
                     <div className='flex flex-col md:flex-row md:items-center md:gap-10'>
                         <div>
                             <label htmlFor="">Email</label><br />
-                            <input type="email" className='bg-[#EAEDF0] mt-2 md:w-[250px] rounded-lg py-2 px-2 w-full'/>
+                            <input type="email" required className='bg-[#EAEDF0] mt-2 md:w-[250px] rounded-lg py-2 px-2 w-full'/>
                         </div>
                         <div>
                             <label htmlFor="">Role</label><br />
-                            <select name="" id=""className='bg-[#EAEDF0] mt-2 md:w-[250px] rounded-lg py-2 px-2 w-full'>
+                            <select name="" required id=""className='bg-[#EAEDF0] mt-2 md:w-[250px] rounded-lg py-2 px-2 w-full'>
                                 <option value="">Select Option ...</option>
                                 <option value="">Donor</option>
                                 <option value="">Volunteer</option>
@@ -71,7 +71,7 @@ const Contact = () => {
                     </div>
                     <div>
                         <label htmlFor="">Message</label><br />
-                        <textarea type="text" className='bg-[#EAEDF0] mt-2  md:w-[540px] rounded-lg py-2 px-2 w-full'/>
+                        <textarea type="text" required className='bg-[#EAEDF0] mt-2  md:w-[540px] rounded-lg py-2 px-2 w-full'/>
                     </div>
                     <button className='bg-orange py-2 px-6 w-[150px] flex items-center justify-center rounded-lg text-white'>Submit</button>
                 </form>
