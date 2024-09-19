@@ -47,7 +47,7 @@ const About = () => {
             <div className='flex flex-col lg:flex-row items-center gap-4 mx-4 md:mx-10'>
                 <div className='flex flex-col gap-4'>
                     <h3 data-aos="fade-right" data-aos-duration="1000" className='text-3xl md:text-4xl text-orange'>Introduction</h3>
-                    <p data-aos="fade-right" data-aos-duration="1500" className='text-lg md:text-xl leading-[1.2]'>The foundation was established on October 23, 2023, by a group of friends who shared the idea of helping the needy. Justice Paa Kwesi Abban Junior, the CEO, is recognized as the lead founder. The initial members joined through engagement and interactions on social media and through friends. YPF believes that true success comes from giving back to society, regardless of age or recognition, and aims to create smiles with even the smallest contributions.</p>
+                    <p data-aos="fade-right" data-aos-duration="1500" className='md:text-xl leading-[1.2]'>The foundation was established on October 23, 2023, by a group of friends who shared the idea of helping the needy. Justice Paa Kwesi Abban Junior, the CEO, is recognized as the lead founder. The initial members joined through engagement and interactions on social media and through friends. YPF believes that true success comes from giving back to society, regardless of age or recognition, and aims to create smiles with even the smallest contributions.</p>
                 </div>
                 {/* <video src={Intro} loop={true} /> */}
                 <video data-aos="zoom-in" data-aos-duration="1000" loop autoPlay muted className='lg:w-[45vw]'>
@@ -58,8 +58,8 @@ const About = () => {
             <div className='flex flex-col-reverse lg:flex-row items-center gap-4 mx-4 md:mx-10 mt-10'>
                 <img data-aos="zoom-in" data-aos-duration="1000" src={We} alt="" className='lg:w-[45vw]'/>
                 <div className='flex flex-col gap-4'>
-                    <h3 data-aos="fade-left" data-aos-duration="1000" className='text-3xl md:text-4xl text-orange'>Who We Are</h3>
-                    <div data-aos="fade-left" data-aos-duration="1500" className='text-lg md:text-xl leading-[1.2] flex flex-col gap-2'>
+                    <h3 data-aos="fade-left" data-aos-duration="1000" className='text-2xl md:text-4xl text-orange'>Who We Are</h3>
+                    <div data-aos="fade-left" data-aos-duration="1500" className='md:text-xl leading-[1.2] flex flex-col gap-2'>
                         <p>The acronym YPF  stands for Young Philanthropists Foundation. It is a platform for young people dedicated to helping the needy and less privilagesd in our society. The name embodies three key elements: </p>
                         <ul className=' list-disc ml-10'>
                             <li><span className='font-bold'>Young:</span> Highlighting the age category of members who take responsibility even when they don’t have much.</li>
@@ -73,8 +73,8 @@ const About = () => {
         </div>
         <div className='bg-white flex flex-col lg:flex-row lg:gap-20 py-12 px-4 md:px-12 lg:px-20 items-center md:w-full'>
             <div className='flex flex-col gap-6 lg:w-[110vw]'>
-                <h3 data-aos="fade-right" data-aos-duration="1000" className='text-3xl md:text-4xl text-orange'>Our Mission</h3>
-                <p data-aos="fade-right" data-aos-duration="2000" className='text-lg md:text-xl leading[1.3]'>Our purpose is to empower the underprivileged by providing them with the tools, resources, and support they need to improve their lives. We focus on creating sustainable solutions that not only address immediate needs but also foster long-term change. Through education, community development, and direct aid, we strive to uplift communities and create a future where everyone has the opportunity to thrive.</p>
+                <h3 data-aos="fade-right" data-aos-duration="1000" className='text-2xl md:text-4xl text-orange'>Our Mission</h3>
+                <p data-aos="fade-right" data-aos-duration="2000" className='md:text-xl leading[1.3]'>Our purpose is to empower the underprivileged by providing them with the tools, resources, and support they need to improve their lives. We focus on creating sustainable solutions that not only address immediate needs but also foster long-term change. Through education, community development, and direct aid, we strive to uplift communities and create a future where everyone has the opportunity to thrive.</p>
             </div>
             <div className='flex items-center gap-12 '>
                 <div className='flex flex-col items-center gap-16'>
@@ -130,7 +130,7 @@ const About = () => {
             </div>
         </div>
         <div className='bg-white py-10 my-4'>
-            <h1 data-aos="fade-down" data-aos-duration="1000" className='text-3xl md:text-4xl text-center font-semibold text-purple '>Meet Our Team Executives</h1>
+            <h1 data-aos="fade-down" data-aos-duration="1000" className='text-2xl md:text-4xl text-center font-semibold text-purple '>Meet Our Team Executives</h1>
             <div className='my-4 py-4 md:px-4'>
             <Swiper
                 modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
