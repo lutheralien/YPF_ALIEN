@@ -148,6 +148,8 @@ const About = () => {
                 spaceBetween={30}
                 slidesPerView={3}
                 navigation={true}
+                autoplay={{ delay: 2000, disableOnInteraction: false }}
+                loop={true}
                 onSwiper={(swiper) => console.log(swiper)}
                 onSlideChange={() => console.log('slide change')}
                 className='md:mx-10 mx-5'
