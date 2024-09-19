@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Navbar from '../components/Navbar'
 import Hero from '../assets/hero-home.png'
 import Donate from '../assets/donate.png'
@@ -18,6 +18,8 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import { Link } from 'react-router-dom'
+import Aos from 'aos'
+import 'aos/dist/aos.css'
 
 
 const TestimonialData = [
@@ -100,14 +102,22 @@ const card = [
 ]
 
 const Home = () => {
+
+    useEffect(() => {
+        Aos.init({
+            once: false,
+        })
+    }, [])
+
+    
   return (
     <div className=''>
         <Navbar/>
-        <div className='w-[100vw] shadow-lg h-[60vh] md:h-[50vh] lg:h-[84vh] flex items-center'>
+        <div data-aos="zoom-in" className='w-[100vw] shadow-lg h-[60vh] md:h-[50vh] lg:h-[84vh] flex items-center'>
             <div className='absolute z-10 lg:w-[45vw] md:w-[60vw] text-center text-white flex gap-3 flex-col md:mx-6 lg:mx-16'>
-                <h1 className='text-4xl md:text-5xl lg:text-6xl font-semibold leading-[1.2]'>Empowering <span className='text-orange'>Youth</span> to Help the <span className='text-orange'>Needy</span></h1>
-                <p className='md:text-2xl text-xl px-10'>Join us in making a great difference in our society today</p>
-                <div className='flex items-center gap-4 md:gap-12 justify-center py-3'>
+                <h1 data-aos="fade-right" data-aos-duration="1000" className='text-4xl md:text-5xl lg:text-6xl font-semibold leading-[1.2]'>Empowering <span className='text-orange'>Youth</span> to Help the <span className='text-orange'>Needy</span></h1>
+                <p data-aos="fade-right" data-aos-duration="3000" className='md:text-2xl text-xl px-10'>Join us in making a great difference in our society today</p>
+                <div data-aos="fade-right" data-aos-duration="5000" className='flex items-center gap-4 md:gap-12 justify-center py-3'>
                     <Link to='/donate'>
                         <button className='hover:bg-white border-2 hover:border-orange hover:text-orange duration-300 hover:scale-105 ease-linear border-orange bg-orange text-white rounded-3xl py-1 px-5 md:py-2 md:px-10 md:text-2xl font-normal'>Donate Now</button>
                     </Link>
@@ -121,7 +131,7 @@ const Home = () => {
         <div className='flex flex-col mx-8 my-5 gap-4 md:mx-4 md:flex-row md:gap-5 lg:mx-20 lg:gap-10 md:-mt-16 z-100 relative mb-12 max-m:h-72'>
             {notes.map((item, id) => {
                 return(
-                    <div key={item.id}>
+                    <div data-aos='zoom-in' data-aos-duration="1500" key={item.id}>
                         <div className={`flex flex-col text-white bg-${item.color} py-6 px-4 items-center`}>
                             <div className='flex items-center gap-4 py-3'>
                                 <img src={item.icon} alt="" className='h-6 w-6'/>
@@ -134,8 +144,13 @@ const Home = () => {
             })}
         </div>
         <div className='w-full bg-white flex flex-col-reverse md:items-center lg:flex-row lg:gap-10 px-8 lg:px-20'>
-            <img src={About} alt="" className='w-[500px]'/>
-            <div className='py-16'>
+            <img src={About} data-aos="fade-right"
+                data-aos-duration='1000'
+                data-aos-easing="ease-in-sine" alt="" className='w-[500px]'/>
+            <div data-aos="zoom-out"
+                data-aos-offset="300"
+                data-aos-duration='1000'
+                data-aos-easing="ease-in-sine" className='py-16'>
                 <p className='text-2xl md:text-3xl text-center text-orange'>About YPF</p>
                 <h1 className='text-3xl md:text-4xl text-center font-semibold pt-2 pb-3 md:py-6'>Get To Know Us More</h1>
                 <div className='md:text-xl flex flex-col gap-4 pt-2'>
@@ -161,11 +176,11 @@ const Home = () => {
             </div>
         </div>
         <div className='bg-white mt-4 pb-16'>
-            <h1 className='text-purple text-4xl font-semibold text-center py-12'>Making A <span className='text-orange'>Difference</span></h1>
+            <h1 data-aos="fade-down" data-aos-duration="1000" className='text-purple text-4xl font-semibold text-center py-12'>Making A <span className='text-orange'>Difference</span></h1>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mx-8 md:mx-20'>
                 {card.map((item, id) => {
                     return(
-                        <div className="bg-base-100 shadow-xl border-2 border-orange rounded-2xl" key={item.id}>
+                        <div data-aos="zoom-in" data-aos-duration="1500" data-aos-delay="300" className="bg-base-100 shadow-xl border-2 border-orange rounded-2xl" key={item.id}>
                             <figure>
                                 <img
                                 src={item.image}
@@ -185,11 +200,11 @@ const Home = () => {
                 })}
             </div>
         </div>
-        <div className=''>
+        <div data-aos="zoom-out-down" data-aos-duration="500">
             <Banner />
         </div>
         <div className='bg-[#F0F0F0] py-12'>
-            <h1 className='text-center text-2xl m:text-4xl font-semibold text-purple'>What They Say About Us</h1>
+            <h1 data-aos="fade-down" data-aos-duration="1000" className='text-center text-2xl m:text-4xl font-semibold text-purple'>What They Say About Us</h1>
         <div className='my-4 py-4 md:px-4'>
             <Swiper
                 modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}

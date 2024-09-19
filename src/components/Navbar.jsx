@@ -23,9 +23,11 @@ const Navbar = () => {
     <nav className="sticky top-0 z-50 w-full bg-purple">
         <div className="mx-4 md:mx-10 relative">
             <div className="flex justify-between items-center">
+              <Link to='/'>
                 <div className="flex items-center py-3 flex-shrink-0">
                     <img src={logo} alt="Logo" className='w-24' />
                 </div>
+              </Link>
                 <ul className=" hidden lg:flex gap-8 font-normal text-xl text-white items-center">
                   <Link to='/' onClick={() => handleLinkClick('Home')}>
                     <li className="">Home</li>
