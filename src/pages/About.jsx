@@ -171,7 +171,7 @@ const About = () => {
                 {
                     executives.map((item, id) => {
                     return (
-                        <SwiperSlide className="bg-base-100 shadow-xl border-2 border-orange rounded-2xl" key={id}>
+                        <SwiperSlide className="bg-white shadow-xl border-2 border-orange rounded-2xl" key={id}>
                             <figure>
                                 <img
                                 src={item.image}
