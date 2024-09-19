@@ -3,10 +3,17 @@ import Navbar from '../components/Navbar'
 import Hero from '../assets/about-hero.png'
 import Intro from '../assets/video.mp4'
 import We from '../assets/we.png'
-import PKay from '../assets/pk.png'
+import PKay from '../assets/pkay.jpg'
 import Rahina from '../assets/rahina.png'
 import Gad from '../assets/gad.png'
 import Inspire from '../assets/inspire.png'
+import Barnabas from '../assets/barnabs.jpg'
+import Juliana from '../assets/julie.jpg'
+import Abigail from '../assets/abigail.jpg'
+import Irene from '../assets/irene.jpg'
+import Erica from '../assets/erica.jpg'
+import Gabby from '../assets/gabby.jpg'
+import Stanley from '../assets/stanley.jpg'
 import Footer from '../components/Footer'
 import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -20,10 +27,14 @@ import 'aos/dist/aos.css'
 const executives = [
     {image: PKay, name: "Justice Paa Kwesi Abban Junior", position: "President, YPF", school: "University of Education, Winneba"},
     {image: Rahina, name: "Rahina Korkor Mensah", position: "Vice President, YPF", school: "University of Ghana, Legon"},
+    {image: Barnabas, name: "Barnabas Nutifafa Dzikunu", position: "Welfare Committee", school: "Librarian, Manstech"},
+    {image: Juliana, name: "Juliana Awuah", position: "Treasurer", school: "St. Karol School of Nursing"},
+    {image: Erica, name: "Erica Asiamah", position: "Financial Head", school: "N/A"},
+    {image: Irene, name: "Irene Ama Duodo", position: "Financial Head", school: "N/A"},
+    {image: Stanley, name: "Abigail Afia Frimpong", position: "Institutional Head", school: "UniMAC IJ"},
+    {image: Abigail, name: "Abigail Afia Frimpong", position: "Institutional Head", school: "UniMAC IJ"},
     {image: Gad, name: "Gad Odoi Alert", position: "Graphic Designer", school: "University of Mines and Technology"},
-    {image: Gad, name: "Gad Odoi Alert", position: "Graphic Designer", school: "University of Mines and Technology"},
-    {image: Gad, name: "Gad Odoi Alert", position: "Graphic Designer", school: "University of Mines and Technology"},
-    {image: Gad, name: "Gad Odoi Alert", position: "Graphic Designer", school: "University of Mines and Technology"},
+    {image: Gabby, name: "Gabriel K.A Quainoo", position: "Software Engineer", school: "University of Ghana, Legon"},
 ]
 const About = () => {
     useEffect(() => {
@@ -162,7 +173,7 @@ const About = () => {
                             <figure>
                                 <img
                                 src={item.image}
-                                alt="Executives" className='rounded-t-xl'/>
+                                alt="Executives" className='rounded-t-xl h-80 w-full'/>
                             </figure>
                             <div className="py-2 px-4 flex flex-col gap-0">
                                 <h2 className="card-title text-purple">{item.name}</h2>

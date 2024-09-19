@@ -187,7 +187,7 @@ const Home = () => {
                                 alt="Shoes" className='rounded-t-xl'/>
                             </figure>
                             <div className="py-2 px-4 flex flex-col gap-4">
-                                <h2 className="card-title">{item.title}</h2>
+                                <h2 className="card-title text-purple">{item.title}</h2>
                                 <p>{item.description}</p>
                                 <div className="">
                                     <a href="https://forms.gle/yXgvukFraDap91YUA" target="_blank" rel="noopener noreferrer">
