@@ -84,17 +84,17 @@ const About = () => {
                     </div>
                     <div data-aos="zoom-in" data-aos-duration="2000" className='drop-shadow-2xl shadow-custom-orange p-3 relative py-12'>
                         <div className='w-12 h-12 text-2xl font-semibold rounded-full flex items-center justify-center bg-orange text-white absolute -top-8 left-8 bg-opacity-70'>03</div>
-                        <p className='text-sm'>To create a platform for young people to donate and help the  needy, including orphans and street beggars with basic needs like food, clothes, shoes and funds</p>
+                        <p className='text-sm'>To ensure good child care in society by providing education on oral hygiene, personal hygiene, goal settings, teenage pregnancy and sociial values.</p>
                     </div>
                 </div>
                 <div className='flex flex-col items-center gap-16 mt-28'>
                     <div data-aos="zoom-in" data-aos-duration="3000" className='drop-shadow-2xl shadow-custom-orange p-3 relative py-12'>
                         <div className='w-12 h-12 text-2xl font-semibold rounded-full flex items-center justify-center bg-orange text-white absolute -top-8 left-8 bg-opacity-70'>02</div>
-                        <p className='text-sm'>To create a platform for young people to donate and help the  needy, including orphans and street beggars with basic needs like food, clothes, shoes and funds</p>
+                        <p className='text-sm'>To build good personalities and networks among foundation members, fostering them into becoming societal role models and effective communication.</p>
                     </div>
                     <div data-aos="zoom-in" data-aos-duration="4000" className='drop-shadow-2xl shadow-custom-orange p-3 relative py-12'>
                         <div className='w-12 h-12 text-2xl font-semibold rounded-full flex items-center justify-center bg-orange text-white absolute -top-8 left-8 bg-opacity-70'>04</div>
-                        <p className='text-sm'>To create a platform for young people to donate and help the  needy, including orphans and street beggars with basic needs like food, clothes, shoes and funds</p>
+                        <p className='text-sm'>To create a family where everyone feels loved and cherished.</p>
                     </div>
                 </div>
             </div>
@@ -124,7 +124,7 @@ const About = () => {
                     </div>
                     <div data-aos="zoom-in" data-aos-duration="4000" className='drop-shadow-2xl shadow-custom-orange p-3 relative py-12'>
                         <div className='w-12 h-12 text-2xl font-semibold rounded-full flex items-center justify-center bg-orange text-white absolute -top-8 left-8 bg-opacity-70'>04</div>
-                        <p className='text-sm'>"To create a world where every individual has the resources and opportunities to thrive, fostering sustainable change and brighter futures for all."</p>
+                        <p className='text-sm'>To create a world where every individual has the resources and opportunities to thrive, fostering sustainable change and brighter futures for all.</p>
                     </div>
                 </div>
             </div>
