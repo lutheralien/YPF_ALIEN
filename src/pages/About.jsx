@@ -175,7 +175,7 @@ const About = () => {
                             <figure>
                                 <img
                                 src={item.image}
-                                alt="Executives" className='rounded-t-xl h-80 w-full'/>
+                                alt={item.name} className='rounded-t-xl h-80 w-full'/>
                             </figure>
                             <div className="py-2 px-4 flex flex-col gap-0">
                                 <h2 className="card-title text-purple">{item.name}</h2>

@@ -180,7 +180,7 @@ const Home = () => {
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mx-8 md:mx-20'>
                 {card.map((item, id) => {
                     return(
-                        <div data-aos="zoom-in" data-aos-duration="1500" data-aos-delay="300" className="bg-base-100 shadow-xl border-2 border-orange rounded-2xl" key={item.id}>
+                        <div data-aos="zoom-in" data-aos-duration="1500" data-aos-delay="300" className="bg-white shadow-xl border-2 border-orange rounded-2xl" key={item.id}>
                             <figure>
                                 <img
                                 src={item.image}
