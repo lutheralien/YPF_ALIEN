@@ -3,8 +3,6 @@ import logo from '../assets/logo.png'
 import { Link } from 'react-router-dom';
 import { CgMenu } from "react-icons/cg";
 import { AiOutlineClose } from "react-icons/ai";
-import Aos from 'aos'
-import 'aos/dist/aos.css'
 
 const Navbar = () => {
   const [selectedLink, setSelectedLink] = useState('');
@@ -18,12 +16,6 @@ const Navbar = () => {
     const toggleNavbar = () => {
         setMobileDrawerOpen(!mobileDrawerOpen)
     }
-
-    useEffect(() => {
-      Aos.init({
-          once: false,
-      })
-    }, [])
 
   return (
     <nav className="sticky top-0 z-50 w-full bg-purple">
@@ -59,7 +51,7 @@ const Navbar = () => {
                 </div>
             </div>
             {mobileDrawerOpen && (
-                <div data-aos="slide-right" data-aos-duration="1500" data-aos-delay="1000" className="fixed transform -translate-x-[5%] transition-all duration-500 ease-in-out top-20 left-0 z-20 w-3/4 h-[100vh] p-12 flex flex-col items-center lg:hidden py-32 bg-purple">
+                <div className="fixed transform -translate-x-[5%] transition-all duration-500 ease-in-out top-20 left-0 z-20 w-3/4 h-[100vh] p-12 flex flex-col items-center lg:hidden py-32 bg-purple">
                     <ul className='font-semibold text-lg text-white text-center flex flex-col gap-3'>
                         <li className='' onClick={toggleNavbar}><Link to="/">Home</Link></li>
                         <li className='' onClick={toggleNavbar}><Link to="/about">About Us</Link></li>

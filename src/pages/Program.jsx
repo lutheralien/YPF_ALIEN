@@ -15,12 +15,11 @@ import 'aos/dist/aos.css'
 
 
 const activities = [
-  {image: Img1, title: "Mental Health Awareness and Menstral Hygiene", subtitle: "YPF in collaboration with Yazz Sanitary towels made donation to the young ladies at Ekumfi Senior High."},
+  {image: Img1, title: "Mental Health Awareness and Menstral Hygiene", subtitle: "YPF shared free sanitary pads to the students of Ekumfi Etsibeedu JHS during our first donation."},
   {image: Img2, title: "Education For All", subtitle: "Donation of free teaching and learning materials to students and teachers who made to make learning easier"},
   {image: Img3, title: "Community Health Awareness", subtitle: " Providing essential healthcare services and education to underserved communities, ensuring access to basic health needs."},
   {image: Img4, title: "Youth Empowerment", subtitle: "Empowering the next generation with skills, resources, and opportunities to become leaders and change-makers in their communities."},
   {image: Img5, title: "Women Empowerment", subtitle: "Supporting women and girls through education, vocational training, and advocacy to promote gender equality and economic independence."},
-  {image: Img6, title: "Youth Sports Programs", subtitle: " Encouraging physical activity and teamwork among youth through organized sports programs and community events."},
 ]
 
 const Program = () => {

@@ -189,7 +189,7 @@ const Home = () => {
                             <div className="py-2 px-4 flex flex-col gap-4">
                                 <h2 className="card-title text-purple">{item.title}</h2>
                                 <p>{item.description}</p>
-                                <div className="">
+                                <div className="flex items-center justify-center">
                                     <a href="https://forms.gle/yXgvukFraDap91YUA" target="_blank" rel="noopener noreferrer">
                                         <button className="bg-purple text-orange text-lg py-2 px-4 rounded-xl">Join Community</button>
                                     </a>

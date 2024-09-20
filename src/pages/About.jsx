@@ -88,7 +88,7 @@ const About = () => {
                 <p data-aos="fade-right" data-aos-duration="2000" className='md:text-xl leading[1.3]'>Our purpose is to empower the underprivileged by providing them with the tools, resources, and support they need to improve their lives. We focus on creating sustainable solutions that not only address immediate needs but also foster long-term change. Through education, community development, and direct aid, we strive to uplift communities and create a future where everyone has the opportunity to thrive.</p>
             </div>
             <div className='flex items-center gap-12 '>
-                <div className='flex flex-col items-center gap-16'>
+                <div className='flex flex-col items-center gap-16 max-md:mt-10'>
                     <div data-aos="zoom-in" data-aos-duration="1000" className='drop-shadow-2xl shadow-custom-orange p-3 relative py-12'>
                         <div className='w-12 h-12 text-2xl font-semibold rounded-full flex items-center justify-center bg-orange text-white absolute -top-8 left-8 bg-opacity-70'>01</div>
                         <p className='text-sm'>To create a platform for young people to donate and help the  needy, including orphans and street beggars with basic needs like food, clothes, shoes and funds</p>
