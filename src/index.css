@@ -10,6 +10,11 @@ body {
     color: black;
 }
 
+html, body {
+    @apply overflow-hidden;
+}
+
+
 /* @keyframes nav-slide {
     from {
         transform: translateX(0%);
