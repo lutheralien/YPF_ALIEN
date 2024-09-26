@@ -6,62 +6,75 @@ import Secure from '../assets/secure.png'
 import Footer from '../components/Footer'
 import Aos from 'aos'
 import 'aos/dist/aos.css'
-// import { PaystackButton } from 'react-paystack'
-
+import { PaystackButton } from 'react-paystack'
 
 const Donate = () => {
-    // const publicKey = "pk_test_82591521c6cc5449e0816bff50cb58267b5525b3";
-    // const [name, setName] = useState("")
-    // const [email, setEmail] = useState("")
-    // const [phone, setPhone] = useState("")
-    // const [amount, setAmount] = useState("")
-    // const [reason, setReason] = useState("")
-    // const currency = "GHS"
+    const publicKey = "pk_test_82591521c6cc5449e0816bff50cb58267b5525b3";
+    const [name, setName] = useState("")
+    const [email, setEmail] = useState("")
+    const [phone, setPhone] = useState("")
+    const [amount, setAmount] = useState("")
+    const [reason, setReason] = useState("")
+    const [showModal, setShowModal] = useState(false)
+    const currency = "GHS"
 
-    // const componentProps = {
-    //     email,
-    //     amount: amount * 100,
-    //     currency,
-    //     name,
-    //     phone,
-    //     metadata: {
-    //         custom_fields: [
-    //             {
-    //                 display_name: "Customer Name",
-    //                 variable_name: "customer_name",
-    //                 value: name // Customer's name
-    //             },
-    //             {
-    //                 display_name: "Phone Number",
-    //                 variable_name: "phone_number",
-    //                 value: phone // Customer's phone number
-    //             },
-    //             {
-    //                 display_name: "Reason",
-    //                 variable_name: "reason",
-    //                 value: reason // Reason for payment
-    //             }
-    //         ]
-    //     },
-    //     publicKey,
-    //     text: "Make Payment",
-    //     onSuccess: () => alert("Thanks for donating to YPF. God bless you🙏"),
-    //     onClose: () => alert("Are you sure you want to close? ")
-    // }
+    const componentProps = {
+        email,
+        amount: parseFloat(amount) * 100,
+        currency,
+        metadata: {
+            name,
+            phone,
+            custom_fields: [
+                {
+                    display_name: "Reason",
+                    variable_name: "reason",
+                    value: reason
+                }
+            ]
+        },
+        publicKey,
+        text: "Pay Now",
+        onSuccess: (reference) => {
+            console.log("Payment successful. Reference:", reference);
+            alert("Thanks for donating to YPF. God bless you🙏 Reference: " + reference.reference);
+            setShowModal(false);
+            // Reset form fields after successful payment
+            setName("");
+            setEmail("");
+            setPhone("");
+            setAmount("");
+            setReason("");
+        },
+        onClose: () => {
+            console.log("Payment window closed");
+            alert("Transaction was not completed, window closed.");
+        },
+    }
 
     useEffect(() => {
         Aos.init({
             once: false,
         })
     }, [])
+
+    const toggleModal = () => {
+        setShowModal(!showModal)
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+    }
+
     return (
-        <div>
+        <div className="relative">
             <Navbar />
             <div data-aos="fade-down" data-aos-duration="1000" className='text-3xl text-center py-8 font-semibold text-purple'>Support Our Cause</div>
             <div className='flex flex-col md:flex-row px-4 lg:mx-32 h-full lg:h-[95vh] mb-20 w-full'>
+                {/* Left side with image */}
                 <div className='lg:w-[40vw] md:w-[90vw] w-full flex items-center shadow-xl'>
                     <img src={Hero} alt="" className='w-full h-full '/>
-                    <div data-aos="zoomi-in" data-aos-duration="2000" className='bg-[#F0EAEA] absolute w-[80%] md:px-3 mx-5 z-10 max-lg:mt-52 lg:-bottom-10 lg:w-[34vw] md:w-[40vw] lg:mx-10'>
+                    <div data-aos="zoom-in" data-aos-duration="2000" className='bg-[#F0EAEA] absolute w-[80%] md:px-3 mx-5 z-10 max-lg:mt-52 lg:-bottom-10 lg:w-[34vw] md:w-[40vw] lg:mx-10'>
                         <div className='flex gap-2 items-center justify-center sm:py-3'>
                             <img src={Coin} alt="" className='w-8'/>
                             <div className='flex items-center flex-col justify-center'>
@@ -69,15 +82,17 @@ const Donate = () => {
                                 <p className='text-purple text-lg md:text-2xl font-semibold'>Join Us Make <span className='text-orange'>Donation</span></p>
                             </div>
                         </div>
-                        <p className='md:py-4 px-4 text-sm md:pb-8'>"Your contribution helps us provide vital services to those in need and those less priviledged in our society, from education to healthcare. Together, we can create a brighter future for all."</p>
+                        <p className='md:py-4 px-4 text-sm md:pb-8'>"Your contribution helps us provide vital services to those in need and those less privileged in our society, from education to healthcare. Together, we can create a brighter future for all."</p>
                     </div>
                 </div>
+                {/* Right side with donation info */}
                 <div className='bg-white p-4 w-full lg:w-[40vw] shadow-xl'>
                     <div data-aos="fade-left" data-aos-duration="1500" className='flex gap-3 items-center justify-center py-5'>
                         <img src={Secure} alt="" className='w-6'/>
                         <h1 className='text-xl text-purple'>Secure Donation</h1>
                     </div>
                     <div className='md:mx-10 flex flex-col gap-6'>
+                        {/* Donation information */}
                         <div className="flex flex-col gap-2">
                             <h1 data-aos='fade-left' data-aos-duration='2000' className='text-xl md:text-2xl font-semibold text-purple'>DONATIONS</h1>
                             <ul data-aos='fade-left' data-aos-duration='2500'>
@@ -87,6 +102,7 @@ const Donate = () => {
                                 <li><span className='font-semibold'>Reference:</span> YPF Donation</li>
                             </ul>
                         </div>
+                        {/* Dues information */}
                         <div className="flex flex-col gap-2">
                             <h1 data-aos='fade-left' data-aos-duration='2000' className='text-xl md:text-2xl font-semibold text-purple'>DUES</h1>
                             <ul data-aos='fade-left' data-aos-duration='2500'>
@@ -96,6 +112,7 @@ const Donate = () => {
                                 <li><span className='font-semibold'>Reference:</span> YPF</li>
                             </ul>
                         </div>
+                        {/* Additional information */}
                         <div data-aos="zoom-in-down" data-aos-duration='1500' className="flex flex-col italic items-center mt-5 text-purple">
                             <p className=''>"Be a blessing to a needy through YPF.</p>
                             <p>Don't forget to say a prayer anytime you donate."</p>
@@ -106,35 +123,50 @@ const Donate = () => {
                             <p>Contact: 0597608013</p>
                         </div>
                     </div>
-                    {/* <div className='md:mx-10 mx-4 flex flex-col gap-3'>
-                        <div className='flex gap-3 flex-col'>
-                            <label htmlFor="name">Full Name</label>
-                            <input type="text" id="name" value={name} onChange={(e) => setName(e.target.value)} className='w-full rounded-md bg-gray-200 p-2 outline-none' name="name" required />
-                        </div>
-                        <div className='flex gap-3 flex-col'>
-                            <label htmlFor="email">Email</label>
-                            <input type="email" id="email" value={email} onChange={(e) => setEmail(e.target.value)} className='w-full rounded-md bg-gray-200 p-2 outline-none' name="email" required />
-                        </div>
-                        <div className='flex gap-3 flex-col'>
-                            <label htmlFor="phone">Phone Number</label>
-                            <input type="tel" id="phone" value={phone} onChange={(e) => setPhone(e.target.value)} className='w-full rounded-md bg-gray-200 p-2 outline-none' name="phone" required />
-                        </div>
-                        <div className='flex gap-3 flex-col'>
-                            <label htmlFor="amount">Amount</label>
-                            <div className='flex gap-2 w-full items-center rounded-md bg-gray-200 p-2'>
-                                <p className='font-semibold'>GHS</p>
-                                <input type="number" id="amount" name="amount" value={amount} onChange={(e) => setAmount(e.target.value)} className='w-full bg-gray-200 py-0.5 outline-none' required />
-                            </div>
-                        </div>
-                        <div className='flex gap-3 flex-col'>
-                            <label htmlFor="message">Reason</label>
-                            <textarea id="message" name="message" value={reason} onChange={(e) => setReason(e.target.value)} className='w-full rounded-md bg-gray-200 p-2 outline-none' rows="2" required></textarea>
-                        </div>
-                        <PaystackButton className='py-2 w-fit mt-2 px-6 bg-orange text-white rounded-md hover:scale-110 duration-300 ease-linear' {...componentProps}/>
-                    </div> */}
+                    <button 
+                        onClick={toggleModal} 
+                        className='mt-4 py-2 px-6 bg-orange text-white rounded-md hover:scale-110 duration-300 ease-linear'
+                    >
+                        Make Donation
+                    </button>
                 </div>
             </div>
             <Footer/>
+
+            {/* Modal */}
+            {showModal && (
+                <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+                    <div className="bg-white p-6 rounded-lg w-full max-w-md">
+                        <h2 className="text-2xl font-bold mb-4 text-purple">Make a Donation</h2>
+                        <form onSubmit={handleSubmit} className='flex flex-col gap-3'>
+                            <div>
+                                <label htmlFor="name" className="block text-sm font-medium text-gray-700">Full Name</label>
+                                <input type="text" id="name" value={name} onChange={(e) => setName(e.target.value)} className='mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50' required />
+                            </div>
+                            <div>
+                                <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email</label>
+                                <input type="email" id="email" value={email} onChange={(e) => setEmail(e.target.value)} className='mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50' required />
+                            </div>
+                            <div>
+                                <label htmlFor="phone" className="block text-sm font-medium text-gray-700">Phone Number</label>
+                                <input type="tel" id="phone" value={phone} onChange={(e) => setPhone(e.target.value)} className='mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50' required />
+                            </div>
+                            <div>
+                                <label htmlFor="amount" className="block text-sm font-medium text-gray-700">Amount (GHS)</label>
+                                <input type="number" id="amount" value={amount} onChange={(e) => setAmount(e.target.value)} className='mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50' required />
+                            </div>
+                            <div>
+                                <label htmlFor="reason" className="block text-sm font-medium text-gray-700">Reason</label>
+                                <textarea id="reason" value={reason} onChange={(e) => setReason(e.target.value)} className='mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50' rows="3" required></textarea>
+                            </div>
+                            <div className="flex justify-between mt-4">
+                                <button type="button" onClick={toggleModal} className='py-2 px-4 bg-gray-200 text-gray-800 rounded-md hover:bg-gray-300'>Cancel</button>
+                                <PaystackButton {...componentProps} className='py-2 px-6 bg-orange text-white rounded-md hover:bg-orange-600' />
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            )}
         </div>
     )
 }
